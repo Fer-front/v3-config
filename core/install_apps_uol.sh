@@ -1,4 +1,4 @@
-APPS=(teams node svn npm spotify terminator "chromium-browser" snap flatpak curl wget n java bla ble bli)
+APPS=(teams chrome node svn npm spotify terminator "chromium-browser" snap flatpak curl wget n java wps flameshot)
 INSTALLED=()
 UNINSTALL=()
 INSTALING=()
@@ -158,27 +158,25 @@ install_node() {
 }
 
 install_java() {
+    notifyInstalation "JAVA"
     tar -vzxf jre-8u351-linux-x64.tar.gz;
      sudo apt install default-jre;
      javac --version;
 }
 
-# install_template_cache() {
-#     # ==========================================================
-#      read -p "Certifique-se que vc esta logado na vpn, caso contrario não sera feito dowload do .jar"
+install_wps() {
+    notifyInstalation "WPS OFFICE"
+    wget -O ./wps.deb https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/11664/wps-office_11.1.0.11664.XA_amd64.deb --show-progress && \
+    sudo dpkg -i ./wps.deb
+}
 
-#      wget -O ~/tcl-installer.jar http://templatecache.qa.intranet/templatecache-local/tcl-installer.jar |
-#      clear;
-#      echo \n ERRO: POSSIVELMENTE VC NÃO ESTAR CONECTADO NA VPN! && \
-#      sleep: 3 && \
-#      exit;
+install_flameshot() {
+    sudo flatpak install flathub org.flameshot.Flameshot
+}
 
-#     # java
-#     # ==========================================================
-#      cd ~ && \
-#      java -jar ./tcl-installer.jar;
-# }
-
+install_chrome() {
+    sudo flatpak install flathub com.google.Chrome
+}
 
 
 # FUNCS INTERACAO CO CLI

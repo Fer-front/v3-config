@@ -99,25 +99,3 @@ init() {
 
 
 init
-
-
-# Iniciando processo de clone dos repositorios necessarios para o v3
-# echo 
-# msg="Você deve estar conectado na VPN, caso contrario não sera feito clone do repositorios!"
-# echo -e "\e[1;40;42m${msg}\e[0m"
-
-# read -p "Nome do usuario: " userName
-# read -s -p "Senha: " password
-
-
-# git clone https://${userName}:${password}@stash.uol.intranet/scm/dcweb/commons.uol.com.br-monaco.git
-# git clone https://${userName}:${password}@stash.uol.intranet/scm/dcweb/commons.uol.com.br-sistemas.git
-# git clone https://${userName}:${password}@stash.uol.intranet/scm/dcweb/commons.uol.com.br-static.git
-# git clone https://${userName}:${password}@stash.uol.intranet/scm/dcweb/commons.uol.com.br-projects.git
-# git clone https://${userName}:${password}@stash.uol.intranet/scm/dcweb/jsuol.com-c.git
-
-# git clone https://${userName}:${password}@stash.uol.intranet/scm/dcweb/projeto-grafico-v3.git
-# git clone https://${userName}:${password}@stash.uol.intranet/scm/~fjsilva/pgv3-cli.git
-
-
-

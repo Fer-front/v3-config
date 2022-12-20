@@ -1,4 +1,4 @@
-transform_executable() {
+apply_permission_executable() {
     chmod +x ./core/*.sh
 }
 
@@ -20,7 +20,7 @@ msg_options() {
     echo
 }
 
-transform_executable;
+apply_permission_executable;
 msg_options;
 
 while [ $op != q ]; do
