@@ -1,40 +1,40 @@
-DIR_V3=(~/UOL/ ~/UOL/git/ ~/UOL/git/commons.uol.com.br-monaco/ ~/UOL/git/commons.uol.com.br-static/ ~/UOL/git/commons.uol.com.br-projects/  ~/UOL/git/commons.uol.com.br-sistemas/ ~/UOL/git/projeto-grafico-v3/ ~/UOL/git/jsuol.com-c/ ~/UOL/git/pgv3-cli/);
+DIR_V3=(${HOME}/UOL/ ${HOME}/UOL/git/ ${HOME}/UOL/git/commons.uol.com.br-monaco/ ${HOME}/UOL/git/commons.uol.com.br-static/ ${HOME}/UOL/git/commons.uol.com.br-projects/  ${HOME}/UOL/git/commons.uol.com.br-sistemas/ ${HOME}/UOL/git/projeto-grafico-v3/ ${HOME}/UOL/git/jsuol.com-c/ ${HOME}/UOL/git/pgv3-cli/);
 NO_DIR=();
 
 creat_root_repository() {
     cd ~;
-    cd ~/UOL/git/ || mkdir -p ~/UOL/git/
+    cd ${HOME}/UOL/git/ || mkdir -p ${HOME}/UOL/git/
 
-    cd ~/UOL/git/
+    cd ${HOME}/UOL/git/
 }
 
 clone() {
     case "$1" in
-        ~/UOL/git/commons.uol.com.br-monaco/)
+        ${HOME}/UOL/git/commons.uol.com.br-monaco/)
             git clone https://${userName}:${password}@stash.uol.intranet/scm/dcweb/commons.uol.com.br-monaco.git
         ;;
 
-        ~/UOL/git/commons.uol.com.br-sistemas/)
+        ${HOME}/UOL/git/commons.uol.com.br-sistemas/)
             git clone https://${userName}:${password}@stash.uol.intranet/scm/dcweb/commons.uol.com.br-sistemas.git
         ;;
 
-        ~/UOL/git/commons.uol.com.br-static/)
+        ${HOME}/UOL/git/commons.uol.com.br-static/)
             git clone https://${userName}:${password}@stash.uol.intranet/scm/dcweb/commons.uol.com.br-static.git
         ;;
 
-        ~/UOL/git/commons.uol.com.br-projects/)
+        ${HOME}/UOL/git/commons.uol.com.br-projects/)
             git clone https://${userName}:${password}@stash.uol.intranet/scm/dcweb/commons.uol.com.br-projects.git
         ;;
 
-        ~/UOL/git/jsuol.com-c/)
+        ${HOME}/UOL/git/jsuol.com-c/)
             git clone https://${userName}:${password}@stash.uol.intranet/scm/dcweb/jsuol.com-c.git
         ;;
 
-        ~/UOL/git/projeto-grafico-v3/)
+        ${HOME}/UOL/git/projeto-grafico-v3/)
             git clone https://${userName}:${password}@stash.uol.intranet/scm/dcweb/projeto-grafico-v3.git
         ;;
 
-        ~/UOL/git/pgv3-cli/)
+        ${HOME}/UOL/git/pgv3-cli/)
             git clone https://${userName}:${password}@stash.uol.intranet/scm/~fjsilva/pgv3-cli.git
         ;;
     esac
@@ -75,7 +75,7 @@ init() {
         echo
         echo path onde deve ser feito o clone:
         echo ===================================================== 
-        echo -e "\e[1;40;42m ~/UOL/git/ \e[0m"
+        echo -e "\e[1;40;42m ${HOME}/UOL/git/ \e[0m"
         echo
 
         echo Iremos realizar o clone novamente após isso faça a verificação novamente.
