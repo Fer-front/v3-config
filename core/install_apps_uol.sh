@@ -132,7 +132,7 @@ install_zsh() {
     echo 
     echo zsh-syntax-highlighting zsh-autosuggestions
     echo
-    echo ex: plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+    echo "ex: plugins=(git zsh-syntax-highlighting zsh-autosuggestions)"
 
     read -p "Vc deseja editar o arquivo zshrc? [s|n]" edit;
     echo 

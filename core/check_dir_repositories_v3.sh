@@ -1,4 +1,4 @@
-DIR_V3=(${HOME}/UOL/ ${HOME}/UOL/git/ ${HOME}/UOL/git/bla/ ${HOME}/UOL/git/ble/ ${HOME}/UOL/git/commons.uol.com.br-monaco/ ${HOME}/UOL/git/commons.uol.com.br-static/ ${HOME}/UOL/git/commons.uol.com.br-projects/  ${HOME}/UOL/git/commons.uol.com.br-sistemas/  ${HOME}/UOL/git/projeto-grafico-v3/ ${HOME}/UOL/git/jsuol.com-c/ ${HOME}/UOL/git/pgv3-cli/);
+DIR_V3=(${HOME}/UOL/ ${HOME}/UOL/git/ ${HOME}/UOL/git/commons.uol.com.br-monaco/ ${HOME}/UOL/git/commons.uol.com.br-static/ ${HOME}/UOL/git/commons.uol.com.br-projects/  ${HOME}/UOL/git/commons.uol.com.br-sistemas/  ${HOME}/UOL/git/projeto-grafico-v3/ ${HOME}/UOL/git/jsuol.com-c/ ${HOME}/UOL/git/pgv3-cli/);
 NO_DIR=();
 
 check_dir_for_v3() {
