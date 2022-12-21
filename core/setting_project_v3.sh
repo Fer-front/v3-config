@@ -1,40 +1,36 @@
-MSG_ALERT="em desenvolvimento!";
+cd ${HOME}/UOL/git/pgv3-cli/;
 
-# echo 
-# echo -e "\e[1;40;42m${MSG_ALERT}\e[0m"
-
-# printar o passo a passo 
-# abrir pasta dos certificados
-# abrir navagador primario
-
-# ir repositorios V3
-# dar pgv3-cli 
-# npm install 
-# sudo npm install -g
-
-# git clone https://stash.uol.intranet/scm/~fjsilva/pgv3-cli.git
-
-cd /home/febarros/UOL/git/pgv3-cli && \
-
-
-pwd && \
-
+# setando repositorio privado do uol
 npm config set @uol:registry http://verdaccio.cms.intranet/;
-npm install;
-sudo npm install -g;
+
+
+# remocao de node_module de projeto grafico v3/
+./remove_node_modules_v3;
+
+npm i;
+sudo npm i -g;
 
 sleep 2;
 
-pgv3-cli config;
+
+msg_config_pgv3=" ====== Atencao passos para configuracao do pgv3-cli ===="
+echo
+echo
+echo
+echo
+echo -e "\e[1;40;42m${msg_config_pgv3}\e[0m"
+echo 
+echo Apos enter sera exibida uma url acesse url, uma pagina sera aberta 
+echo vc tera que passar seu nome e nome de usuario uol
+echo abaixo sera solicitado o path dos repositorios PROJETO-GRAFICO-V3 E templatecache
+
+echo Para projeto-grafico-v3 cole o valor abaixo:
+echo "${HOME}/UOL/git/projeto-grafico-v3"
+
+echo Para templatecache cole valor abaixo:
+echo "${HOME}/templatecache-local/templates"
+echo 
+
+read -p "[Enter] para continuar"
+
 sudo pgv3-cli config;
-
-
-
-# abrir url no terminal
-# passar nome e login
-
-# abrir arquivo com informacao de cola link do repositorio projeto grafico e do template-cache
-
-# /home/febarros/UOL/git/projeto-grafico-v3
-# /home/febarros/templatecache-local/templates
-
