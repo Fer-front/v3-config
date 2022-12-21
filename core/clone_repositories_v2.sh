@@ -3,6 +3,8 @@ echo
 msg="Você deve estar conectado na VPN, caso contrario não sera feito clone do repositorios!"
 echo -e "\e[1;40;42m${msg}\e[0m"
 
+cd ${HOME}/UOL/git/
+
 read -p "Nome do usuario: " userName
 read -s -p "Senha: " password
 
