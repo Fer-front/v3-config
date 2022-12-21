@@ -13,6 +13,7 @@ msg_options() {
     echo [4] Criar links simbolidos do v3
     echo [5] Configurar v3
     echo [6] Clonar repositorios do V2
+    echo [7] Remover node module V3
     echo [q] Sair
     echo
     read -p "Digite sua opção: " op;
@@ -42,6 +43,9 @@ while [ $op != q ]; do
         ;;
         6) 
             ./core/clone_repositories_v2.sh 
+        ;;
+        7) 
+            ./core/remove_node_modules_v3.sh 
         ;;
     esac
 
