@@ -1,4 +1,4 @@
-APPS=(teams chrome node svn npm spotify terminator "chromium-browser" snap flatpak curl wget n java wps flameshot)
+APPS=(git curl wget snap node npm n java svn teams code "sublime-text" chrome spotify terminator "chromium-browser" wps lunatask marktext webstorm flameshot zsh)
 INSTALLED=()
 UNINSTALL=()
 INSTALING=()
@@ -7,14 +7,15 @@ INSTALING=()
 # ==================================================================
 
 notifyInstalation() {
-    sudo apt update
-
-    clear
+    echo
+    echo
+    echo
+    echo 
     echo instalando $1
     echo ================================================
     echo
 
-    sleep 3
+    sleep 1
 }
 
 check_instalation_app() {
@@ -58,21 +59,9 @@ install_svn() {
     sudo apt update
 }
 
-install_bla() {
-    echo INSTALANDO APP BLA =========================
-}
-
-install_ble() {
-    echo INSTALANDO APP BLE =========================
-}
-
-install_bli() {
-    echo INSTALANDO APP BLI =========================
-}
-
 install_wget() {
     notifyInstalation "wget"
-    sudo apt install wget
+    sudo apt -y install wget
 }
 
 install_curl() {
@@ -83,11 +72,6 @@ install_curl() {
 install_git() {
     notifyInstalation "git"
     sudo apt install git
-}
-
-install_flatpak() {
-    notifyInstalation "flatpak"
-    sudo apt install flatpak
 }
 
 install_snap() {
@@ -125,6 +109,8 @@ install_spotify() {
 }
 
 install_zsh() {
+    msg_config="========= Configuracao do zsh ========"
+
     notifyInstalation "zsh e plugins"
     sudo apt install zsh &&
         sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" &&
@@ -133,10 +119,27 @@ install_zsh() {
         git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions &&
         git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-    sudo usermod --shell $(which zsh) $USER
+    # sudo usermod --shell $(which zsh) $USER
 
     # trocar o arquivo zshrc
-    sudo gedit ~/.zshrc
+
+    echo
+    echo
+    echo
+    echo -e "\e[1;40;42m ${msg_config}/UOL/teste/ \e[0m"
+    echo 
+    echo Para ativar os plugins no shell zsh na linha onde possui plugins adicione o seguinte: 
+    echo 
+    echo zsh-syntax-highlighting zsh-autosuggestions
+    echo
+    echo ex: plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+
+    read -p "Vc deseja editar o arquivo zshrc? [s|n]" edit;
+    echo 
+
+    if [ $edit = "s" ]; then
+        sudo gedit ${HOME}/.zshrc
+    fi
 }
 
 install_terminator() {
@@ -168,14 +171,37 @@ install_wps() {
     notifyInstalation "WPS OFFICE"
     wget -O ./wps.deb https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/11664/wps-office_11.1.0.11664.XA_amd64.deb --show-progress && \
     sudo dpkg -i ./wps.deb
+    sudo rm -rf ./wps.deb
 }
 
 install_flameshot() {
-    sudo flatpak install flathub org.flameshot.Flameshot
+    sudo snap install flameshot
 }
 
 install_chrome() {
-    sudo flatpak install flathub com.google.Chrome
+    notifyInstalation "Google chrome"
+    wget -O ./chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb --show-progress
+    sudo dpkg -i ./chrome.deb
+    sudo rm -rf ./chrome.deb
+}
+
+install_sublime-text() {
+    notifyInstalation "Sublime text"
+    sudo snap install sublime-text --classic
+}
+
+install_lunatask() {
+    notifyInstalation "Lunatask gerenciador de tarefas e notepad"
+    sudo snap install lunatask
+}
+
+install_marktext() {
+    notifyInstalation "Marktext editor de markdowm"
+    snap install marktext
+}
+
+install_webstorm() {
+    sudo snap install webstorm --classic
 }
 
 
