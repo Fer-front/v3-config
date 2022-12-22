@@ -32,6 +32,7 @@ msg_options() {
     echo [6] Clonar repositorios do V2
     echo [7] Remover node module V3
     echo [8] Certificados HTTPS V3
+    echo [9] Ajustar Json de pgv3-cli config V3
     echo [q] Sair
     echo
     read -p "Digite sua opção: " op;
@@ -67,6 +68,9 @@ while [ $op != q ]; do
         ;;
         8) 
             ./core/certificados.sh
+        ;;
+        9) 
+            ./core/config_data_pgv3_cli_config.sh
         ;;
     esac
 
