@@ -1,19 +1,37 @@
+MSG_ALERT="Este script so funcionara com shell bash"
+
+echo -e "\e[1;40;42m${MSG_ALERT}\e[0m"
+echo ===================================================
+
+echo caso vc esteja utilizando zsh 
+echo execute comando:
+echo -e "\e[1;40;42m bash \e[0m"
+echo
+echo e rode o script novamente
+echo
+read -p "Pressione qualquer tecla para continuar"
+
+echo
+echo
+
 apply_permission_executable() {
     chmod +x ./core/*.sh
 }
 
 msg_options() {
     sleep 1;
-
+    echo
+    echo
     echo Escolha uma das opções abaixo;
     echo ==========================================
     echo [1] Instalar apps
     echo [2] Clonar repositorios do V3
     echo [3] Checar seus repositorios V3
-    echo [4] Criar links simbolidos do v3
+    echo [4] Criar links simbolicos do v3
     echo [5] Configurar v3
     echo [6] Clonar repositorios do V2
     echo [7] Remover node module V3
+    echo [8] Certificados HTTPS V3
     echo [q] Sair
     echo
     read -p "Digite sua opção: " op;
@@ -46,6 +64,9 @@ while [ $op != q ]; do
         ;;
         7) 
             ./core/remove_node_modules_v3.sh 
+        ;;
+        8) 
+            ./core/certificados.sh
         ;;
     esac
 
