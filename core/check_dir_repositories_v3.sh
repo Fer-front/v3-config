@@ -1,4 +1,4 @@
-DIR_V3=(${HOME}/UOL/ ${HOME}/UOL/git/ ${HOME}/UOL/git/commons.uol.com.br-monaco/ ${HOME}/UOL/git/commons.uol.com.br-static/ ${HOME}/UOL/git/commons.uol.com.br-projects/  ${HOME}/UOL/git/commons.uol.com.br-sistemas/  ${HOME}/UOL/git/projeto-grafico-v3/ ${HOME}/UOL/git/jsuol.com-c/ ${HOME}/UOL/git/pgv3-cli/);
+DIR_V3=(${HOME}/uol_git/ ${HOME}/uol_git/commons.uol.com.br-monaco/ ${HOME}/uol_git/commons.uol.com.br-static/ ${HOME}/uol_git/commons.uol.com.br-projects/  ${HOME}/uol_git/commons.uol.com.br-sistemas/  ${HOME}/uol_git/projeto-grafico-v3/ ${HOME}/uol_git/jsuol.com-c/ ${HOME}/uol_git/pgv3-cli/);
 NO_DIR=();
 
 check_dir_for_v3() {
@@ -34,10 +34,9 @@ check_dir_for_v3() {
         echo
         echo path onde deve ser feito o clone:
         echo ===================================================== 
-        echo -e "\e[1;40;42m ${HOME}/UOL/git/ \e[0m"
+        echo -e "\e[1;40;42m ${HOME}/uol_git/ \e[0m"
         echo        
     fi
-
 }
 
 check_dir_for_v3;
