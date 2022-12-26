@@ -1,12 +1,12 @@
 # V3 Config
 
-![](/home/febarros/Documentos/install_v3/assets/img/space.png)
+![](./assets/img/space.png)
 
 Ao clonar o repositório acesse o mesmo e procure por **init.sh** de permissão de execução para o script.
 
 
 
-![](/home/febarros/Documentos/install_v3/assets/img/FILE_START.png)
+![](./assets/img/FILE_START.png)
 
 
 
@@ -20,7 +20,7 @@ Clique com o botão direito sobre ele e va em propriedades:
 
 
 
-![](/home/febarros/Documentos/install_v3/assets/img/ABILITE_SCRIPT.png)
+![](./assets/img/ABILITE_SCRIPT.png)
 
 
 
@@ -32,13 +32,13 @@ após isso e só executar o script via terminal:
 
 Neste script possuimos alguma opções entre elas:
 
-![](/home/febarros/Documentos/install_v3/assets/img/CLI.png)
+![](./assets/img/CLI.png)
 
-![](/home/febarros/Documentos/install_v3/assets/img/MARGIN.png)
+![](./assets/img/MARGIN.png)
 
 ## Importante
 
-![](/home/febarros/Documentos/install_v3/assets/img/space.png)
+![](./assets/img/space.png)
 
 - Para instalação do v3 via script certifique-se que não tenha
   nenhum repositorio clonado dentro ~/uol_git
@@ -50,32 +50,32 @@ Neste script possuimos alguma opções entre elas:
 
 - Você ira rodar o script com bash
 
-![](/home/febarros/Documentos/install_v3/assets/img/MARGIN.png)
+![](./assets/img/MARGIN.png)
 
 ## Na instalação dos app tesmos o seguintes app
 
-![](/home/febarros/Documentos/install_v3/assets/img/space.png)
+![](./assets/img/space.png)
 
-![](/home/febarros/Documentos/install_v3/assets/img/APPS.png)
+![](./assets/img/APPS.png)
 
-![](/home/febarros/Documentos/install_v3/assets/img/OUTER_APPS.png)
+![](./assets/img/OUTER_APPS.png)
 
-![](/home/febarros/Documentos/install_v3/assets/img/MARGIN.png)
+![](./assets/img/MARGIN.png)
 
 ## Clonar repositório v3
 
-![](/home/febarros/Documentos/install_v3/assets/img/space.png)
+![](./assets/img/space.png)
 
 Será clonado somente o necessario para rodar o projeto-grafico.
 
-![](/home/febarros/Documentos/install_v3/assets/img/MARGIN.png)
+![](./assets/img/MARGIN.png)
 
 ## Checar o repositório v3
 
-![](/home/febarros/Documentos/install_v3/assets/img/space.png)
+![](./assets/img/space.png)
 
 Verifica se os repositórios necessario para o funcionamento do v3 estao ok
 
 OBS: Essa verifição só verifica se o diretorio esta presente em uol_git/ caso já esteja não sera feito o clone.
 
-![](/home/febarros/Documentos/install_v3/assets/img/MARGIN.png)
+![](./assets/img/MARGIN.png)
