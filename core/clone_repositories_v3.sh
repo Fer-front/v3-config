@@ -1,13 +1,8 @@
-DIR_V3=(${HOME}/uol_git/ ${HOME}/uol_git/commons.uol.com.br-monaco/ ${HOME}/uol_git/commons.uol.com.br-static/ ${HOME}/uol_git/commons.uol.com.br-projects/  ${HOME}/uol_git/commons.uol.com.br-sistemas/ ${HOME}/uol_git/projeto-grafico-v3/ ${HOME}/uol_git/jsuol.com-c/ ${HOME}/uol_git/pgv3-cli/);
+DIR_V3=(${PATH_REPO} ${PATH_REPO}commons.uol.com.br-monaco/ ${PATH_REPO}commons.uol.com.br-static/ ${PATH_REPO}commons.uol.com.br-projects/  ${PATH_REPO}commons.uol.com.br-sistemas/ ${PATH_REPO}projeto-grafico-v3/ ${PATH_REPO}jsuol.com-c/ ${PATH_REPO}pgv3-cli/);
+PATH_REPO="${HOME}/uol_git/"
 NO_DIR=();
 NEW_PWD=""
-
-# TESTE="$(./core/pwd.sh 'oi')" 
-
-
-# echo "SENHA => ${TESTE}"
-
-# exit 
+TYPE=""
 
 pwd() {
     utf8_to_asci() {
@@ -81,39 +76,65 @@ pwd() {
 
 creat_root_repository() {
     cd ~;
-    cd ${HOME}/uol_git/ || mkdir -p ${HOME}/uol_git/
+    cd ${PATH_REPO} || mkdir -p ${PATH_REPO}
 
-    cd ${HOME}/uol_git/
+    cd ${PATH_REPO}
+}
+
+cloneType() {
+
+    echo "Escolha uma formas de clone HTTP ou SSH"
+    echo "================================================="
+    echo
+    echo "  [ 1 ] HTTP"
+    echo "  [ 2 ] SSH"
+    echo 
+    read -p "Opção: " op;
+    
+    case "$op" in
+        "1")
+            read -p "Nome do usuario: " userName;
+            read -p "Senha: " password;
+
+            pwd $password;
+
+            TYPE="git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm"
+        ;;
+        "2")
+            TYPE="git clone ssh://git@stash.uol.intranet:7999/dcweb"
+        ;;
+
+    esac
 }
 
 clone() {
     case "$1" in
-        ${HOME}/uol_git/commons.uol.com.br-monaco/)
-            git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/dcweb/commons.uol.com.br-monaco.git
+        ${PATH_REPO}commons.uol.com.br-monaco/)
+            ${TYPE}/dcweb/commons.uol.com.br-monaco.git
         ;;
 
-        ${HOME}/uol_git/commons.uol.com.br-sistemas/)
-            git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/dcweb/commons.uol.com.br-sistemas.git
+        ${PATH_REPO}commons.uol.com.br-sistemas/)
+            ${TYPE}/dcweb/commons.uol.com.br-sistemas.git
         ;;
 
-        ${HOME}/uol_git/commons.uol.com.br-static/)
-            git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/dcweb/commons.uol.com.br-static.git
+        ${PATH_REPO}commons.uol.com.br-static/)
+            ${TYPE}/dcweb/commons.uol.com.br-static.git
         ;;
 
-        ${HOME}/uol_git/commons.uol.com.br-projects/)
-            git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/dcweb/commons.uol.com.br-projects.git
+        ${PATH_REPO}commons.uol.com.br-projects/)
+            ${TYPE}/dcweb/commons.uol.com.br-projects.git
         ;;
 
-        ${HOME}/uol_git/jsuol.com-c/)
-            git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/dcweb/jsuol.com-c.git
+        ${PATH_REPO}jsuol.com-c/)
+            ${TYPE}/dcweb/jsuol.com-c.git
         ;;
 
-        ${HOME}/uol_git/projeto-grafico-v3/)
-            git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/dcweb/projeto-grafico-v3.git
+        ${PATH_REPO}projeto-grafico-v3/)
+            ${TYPE}/dcweb/projeto-grafico-v3.git
         ;;
 
-        ${HOME}/uol_git/pgv3-cli/)
-            git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/~fjsilva/pgv3-cli.git
+        ${PATH_REPO}pgv3-cli/)
+            ${TYPE}/~fjsilva/pgv3-cli.git || git clone https://stash.uol.intranet/scm/~fjsilva/pgv3-cli.git
         ;;
     esac
 }
@@ -151,13 +172,10 @@ init() {
         done
 
         echo
-        echo path onde deve ser feito o clone:
+        echo path onde será feito o clone:
         echo ===================================================== 
-        echo -e "\e[1;40;42m ${HOME}/uol_git/ \e[0m"
+        echo -e "\e[1;40;42m ${PATH_REPO} \e[0m"
         echo
-
-        echo Iremos realizar o clone novamente após isso faça a verificação novamente.
-        echo Caso não resolva clone manualmente os repo no path acima. 
         
 
         # Iniciando processo de clone dos repositorios necessarios para o v3
@@ -165,10 +183,11 @@ init() {
         msg="Você deve estar conectado na VPN, caso contrario não sera feito clone do repositorios!"
         echo -e "\e[1;40;42m${msg}\e[0m"
 
-        read -p "Nome do usuario: " userName;
-        read -p "Senha: " password;
+        cloneType
 
-        pwd $password;
+        echo 
+        echo "Iniciando clone"
+        echo 
 
         for repos in "${NO_DIR[@]}"; do
             clone $repos;
@@ -176,6 +195,5 @@ init() {
     fi
 
 }
-
 
 init
