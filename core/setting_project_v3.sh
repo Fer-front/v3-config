@@ -14,7 +14,7 @@ echo
 echo
 echo
 echo
-echo -e "\e[1;40;42m${msg_config_pgv3}\e[0m"
+echo -e "\033[1;40;42m${msg_config_pgv3}\033[0m"
 echo 
 echo Apos enter sera exibida uma url acesse url, uma pagina sera aberta 
 echo vc tera que passar seu nome e nome de usuario uol

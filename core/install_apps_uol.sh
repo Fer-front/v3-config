@@ -126,7 +126,7 @@ install_zsh() {
     echo
     echo
     echo
-    echo -e "\e[1;40;42m ${msg_config}/UOL/teste/ \e[0m"
+    echo -e "\033[1;40;42m ${msg_config}/UOL/teste/ \033[0m"
     echo 
     echo Para ativar os plugins no shell zsh na linha onde possui plugins adicione o seguinte: 
     echo 

@@ -34,7 +34,7 @@ check_dir_for_v3() {
         echo
         echo path onde deve ser feito o clone:
         echo ===================================================== 
-        echo -e "\e[1;40;42m ${HOME}/uol_git/ \e[0m"
+        echo -e "\033[1;40;42m ${HOME}/uol_git/ \033[0m"
         echo        
     fi
 }

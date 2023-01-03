@@ -107,7 +107,7 @@ cloneType() {
 }
 
 echo
-echo -e "\e[1;40;42m${VPN_DISCLAMER}\e[0m"
+echo -e "\033[1;40;42m${VPN_DISCLAMER}\033[0m"
 
 create_root_repository;
 

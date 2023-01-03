@@ -8,7 +8,7 @@ fi
 
 
 echo 
-echo -e "\e[1;40;42m${MSG_ALERT}\e[0m"
+echo -e "\033[1;40;42m${MSG_ALERT}\033[0m"
 echo
 read -p "pressione qual quer tecla para continuar"
 

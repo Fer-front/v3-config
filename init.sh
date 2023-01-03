@@ -151,11 +151,11 @@ init() {
 
             echo
             echo
-            echo -e "\e[1;40;42m${MSG_ALERT}\e[0m"
+            echo -e "\033[1;40;42m${MSG_ALERT}\033[0m"
             echo "==================================================="
 
             echo "execute comando:"
-            echo -e "\e[1;40;42m bash \e[0m"
+            echo -e "\033[1;40;42m bash \033[0m"
             echo
             echo "e rode o script novamente"
             echo

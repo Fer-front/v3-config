@@ -174,14 +174,14 @@ init() {
         echo
         echo path onde será feito o clone:
         echo ===================================================== 
-        echo -e "\e[1;40;42m ${PATH_REPO} \e[0m"
+        echo -e "\033[1;40;42m ${PATH_REPO} \033[0m"
         echo
         
 
         # Iniciando processo de clone dos repositorios necessarios para o v3
         echo
         msg="Você deve estar conectado na VPN, caso contrario não sera feito clone do repositorios!"
-        echo -e "\e[1;40;42m${msg}\e[0m"
+        echo -e "\033[1;40;42m${msg}\033[0m"
 
         cloneType
 

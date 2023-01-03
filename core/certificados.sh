@@ -6,7 +6,7 @@ echo
 echo Abra o navegador 
 echo na barra de url cole a seguinte url:
 echo
-echo -e "\e[1;40;42m chrome://settings/certificates\e[0m"
+echo -e "\033[1;40;42m chrome://settings/certificates\033[0m"
 echo 
 echo ira aparecer pagina de gerenciamento de certificados https
 echo sera possivel ver 4 abas 
