@@ -74,7 +74,7 @@ pwd() {
     done
 }
 
-creat_root_repository() {
+create_root_repository() {
     cd ~;
     cd ${PATH_REPO} || mkdir -p ${PATH_REPO}
 
@@ -101,7 +101,7 @@ cloneType() {
             TYPE="git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm"
         ;;
         "2")
-            TYPE="git clone ssh://git@stash.uol.intranet:7999/dcweb"
+            TYPE="git clone ssh://git@stash.uol.intranet:7999"
         ;;
 
     esac
@@ -140,7 +140,7 @@ clone() {
 }
 
 init() {
-    creat_root_repository;
+    create_root_repository;
 
     echo
     echo Diretorios para rodar v3:
@@ -179,7 +179,7 @@ init() {
         
 
         # Iniciando processo de clone dos repositorios necessarios para o v3
-        echo 
+        echo
         msg="Você deve estar conectado na VPN, caso contrario não sera feito clone do repositorios!"
         echo -e "\e[1;40;42m${msg}\e[0m"
 

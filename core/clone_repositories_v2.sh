@@ -1,6 +1,8 @@
 # Iniciando processo de clone dos repositorios necessarios para o v2
-
+VPN_DISCLAMER="Você deve estar conectado na VPN, caso contrario não sera feito clone do repositorios!"
+PATH_REPO="${HOME}/uol_git_TESTE/"
 NEW_PWD=""
+TYPE=""
 
 pwd() {
     utf8_to_asci() {
@@ -72,38 +74,66 @@ pwd() {
     done
 }
 
+create_root_repository() {
+    cd ~;
+    cd ${PATH_REPO} || mkdir -p ${PATH_REPO}
+
+    cd ${PATH_REPO}
+}
+
+cloneType() {
+
+    echo "Escolha uma formas de clone HTTP ou SSH"
+    echo "================================================="
+    echo
+    echo "  [ 1 ] HTTP"
+    echo "  [ 2 ] SSH"
+    echo 
+    read -p "Opção: " op;
+    
+    case "$op" in
+        "1")
+            read -p "Nome do usuario: " userName;
+            read -p "Senha: " password;
+
+            pwd $password;
+
+            TYPE="git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm"
+        ;;
+        "2")
+            TYPE="git clone ssh://git@stash.uol.intranet:7999"
+        ;;
+    esac
+}
+
 echo
-msg="Você deve estar conectado na VPN, caso contrario não sera feito clone do repositorios!"
-echo -e "\e[1;40;42m${msg}\e[0m"
+echo -e "\e[1;40;42m${VPN_DISCLAMER}\e[0m"
 
-cd ${HOME}/uol_git/
+create_root_repository;
 
-read -p "Nome do usuario: " userName
-read -p "Senha: " password
+cloneType;
 
-pwd $password;
-
-git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/dcweb/app.servicos.uol.com.br.git
-git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/dcweb/jsuol.com-barra.git
-git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/dcweb/tab.uol.com.br.git
-git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/dcweb/carros.uol.com.br.git
-git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/dcweb/tilt.uol.com.br.git
-git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/dcweb/nossa.uol.com.br.git
-git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/dcweb/noticias.uol.com.br.git
-git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/dcweb/universa.uol.com.br.git
-git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/dcweb/economia.uol.com.br.git
-git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/dcweb/vestibular.uol.com.br.git
-git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/dcweb/educacao.uol.com.br.git
-git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/dcweb/projeto-grafico-v2.git
-git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/dcweb/placar.uol.com.br.git
-git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/dcweb/viagem.uol.com.br.git
-git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/dcweb/eleicoes.uol.com.br.git
-git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/dcweb/play-conteudo.uol.com.br.git
-git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/dcweb/vivabem.uol.com.br.git
-git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/dcweb/esporte.uol.com.br.git
-git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/~gpaes/git-deploy.git
-git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/dcweb/robocopier.git
-git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/dcweb/splash.uol.com.br.git
-git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/dcweb/www3.uol.com.br.git
-git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/dcweb/jsuol.com-b.git
-git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm/dcweb/start.uol.com.br.git
+${TYPE}/dcweb/app.servicos.uol.com.br.git
+${TYPE}/dcweb/jsuol.com-barra.git
+${TYPE}/dcweb/tab.uol.com.br.git
+${TYPE}/dcweb/carros.uol.com.br.git
+${TYPE}/dcweb/tilt.uol.com.br.git
+${TYPE}/dcweb/nossa.uol.com.br.git
+${TYPE}/dcweb/noticias.uol.com.br.git
+${TYPE}/dcweb/universa.uol.com.br.git
+${TYPE}/dcweb/economia.uol.com.br.git
+${TYPE}/dcweb/vestibular.uol.com.br.git
+${TYPE}/dcweb/educacao.uol.com.br.git
+${TYPE}/dcweb/projeto-grafico-v2.git
+${TYPE}/dcweb/placar.uol.com.br.git
+${TYPE}/dcweb/viagem.uol.com.br.git
+${TYPE}/dcweb/eleicoes.uol.com.br.git
+${TYPE}/dcweb/play-conteudo.uol.com.br.git
+${TYPE}/dcweb/vivabem.uol.com.br.git
+${TYPE}/dcweb/esporte.uol.com.br.git
+${TYPE}/~gpaes/git-deploy.git
+${TYPE}/dcweb/robocopier.git
+${TYPE}/dcweb/splash.uol.com.br.git
+${TYPE}/dcweb/www3.uol.com.br.git
+${TYPE}/dcweb/jsuol.com-b.git
+${TYPE}/dcweb/start.uol.com.br.git
