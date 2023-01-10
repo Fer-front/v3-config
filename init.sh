@@ -106,22 +106,11 @@ mac() {
 }
 
 manager_so() {
-    echo
-    echo "       Qual sistema operacional?"
-    echo "=========================================="
-    echo 
-    echo "  [1] linux"
-    echo "  [2] mac"
-    echo "  [q] exit"
-    echo
-
-    read -p "Escolha entre as opções 1 e 2 : " os
-
-    case "$os" in
-        "1") 
+    case "$OSTYPE" in
+        "linux-gnu"* ) 
             linux;
         ;;
-        "2") 
+        "darwin"* ) 
             mac;
         ;;
     esac
@@ -129,45 +118,29 @@ manager_so() {
 
 
 init() {
-    apply_permission_executable;
+    if test -n "$BASH_VERSION"; then
+        apply_permission_executable;
+        manager_so;
 
-    echo
-    echo "       Qual shell vc está utilizando?"
-    echo "=========================================="
-    echo 
-    echo "  [1] bash"
-    echo "  [2] zsh"
-    echo "  [q] exit"
-    echo
+    else
+        MSG_ALERT="Vc terá que trocar para o shell bash"
 
-    read -p "Escolha entre as opções 1 e 2 : " _shell
+        echo
+        echo
+        echo -e "\033[1;40;42m${MSG_ALERT}\033[0m"
+        echo "==================================================="
 
-    case "$_shell" in
-        1) 
-            manager_so;
-        ;;
-        2) 
-            MSG_ALERT="Vc terá que trocar para o shell bash"
+        echo "execute comando:"
+        echo -e "\033[1;40;42m bash \033[0m"
+        echo
+        echo "e rode o script novamente"
+        echo
 
-            echo
-            echo
-            echo -e "\033[1;40;42m${MSG_ALERT}\033[0m"
-            echo "==================================================="
-
-            echo "execute comando:"
-            echo -e "\033[1;40;42m bash \033[0m"
-            echo
-            echo "e rode o script novamente"
-            echo
-
-            read -p "[ENTER] para continuar"
-
-            echo
-            echo
-            
-            exit;
-        ;;
-    esac
+        echo
+        echo
+        
+        exit;
+    fi
 }
 
 init
