@@ -1,6 +1,6 @@
 # Iniciando processo de clone dos repositorios necessarios para o v2
-VPN_DISCLAMER="Você deve estar conectado na VPN, caso contrário não será feito clone dos repositórios!"
-PATH_REPO="${HOME}/uol_git/"
+VPN_DISCLAMER="Você deve estar conectado na VPN, caso contrario não sera feito clone do repositorios!"
+PATH_REPO="${HOME}/uol_git_TESTE/"
 NEW_PWD=""
 TYPE=""
 
@@ -81,59 +81,25 @@ create_root_repository() {
     cd ${PATH_REPO}
 }
 
-cloneType() {
+read -p "Nome do usuario: " userName;
+read -p "Senha: " password;
 
-    echo "Escolha uma formas de clone HTTP ou SSH"
-    echo "================================================="
-    echo
-    echo "  [ 1 ] HTTP"
-    echo "  [ 2 ] SSH"
-    echo 
-    read -p "Opção: " op;
-    
-    case "$op" in
-        "1")
-            read -p "Nome do usuario: " userName;
-            read -p "Senha: " password;
+pwd $password;
 
-            pwd $password;
-
-            TYPE="git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm"
-        ;;
-        "2")
-            TYPE="git clone ssh://git@stash.uol.intranet:7999"
-        ;;
-    esac
-}
+TYPE="git clone https://${userName}:${NEW_PWD}@stash.uol.intranet/scm"
 
 echo
 echo -e "\033[1;40;42m${VPN_DISCLAMER}\033[0m"
 
 create_root_repository;
 
-cloneType;
 
+# REPOSITORIOS BASE PARA APLICAÇOES DO ROSWELL
+# ----------------------------------------------------------
 ${TYPE}/dcweb/app.servicos.uol.com.br.git
-${TYPE}/dcweb/jsuol.com-barra.git
-${TYPE}/dcweb/tab.uol.com.br.git
-${TYPE}/dcweb/carros.uol.com.br.git
-${TYPE}/dcweb/tilt.uol.com.br.git
-${TYPE}/dcweb/nossa.uol.com.br.git
-${TYPE}/dcweb/noticias.uol.com.br.git
-${TYPE}/dcweb/universa.uol.com.br.git
-${TYPE}/dcweb/economia.uol.com.br.git
-${TYPE}/dcweb/vestibular.uol.com.br.git
-${TYPE}/dcweb/educacao.uol.com.br.git
-${TYPE}/dcweb/projeto-grafico-v2.git
-${TYPE}/dcweb/placar.uol.com.br.git
-${TYPE}/dcweb/viagem.uol.com.br.git
-${TYPE}/dcweb/eleicoes.uol.com.br.git
-${TYPE}/dcweb/play-conteudo.uol.com.br.git
-${TYPE}/dcweb/vivabem.uol.com.br.git
-${TYPE}/dcweb/esporte.uol.com.br.git
-${TYPE}/~gpaes/git-deploy.git
-${TYPE}/dcweb/robocopier.git
-${TYPE}/dcweb/splash.uol.com.br.git
-${TYPE}/dcweb/www3.uol.com.br.git
-${TYPE}/dcweb/jsuol.com-b.git
-${TYPE}/dcweb/start.uol.com.br.git
+${TYPE}/ros/roswell-cli.git
+${TYPE}/ros/roswell-api.git
+${TYPE}/ros/roswell-core.git
+${TYPE}/ros/roswell-cron.git
+${TYPE}/ros/roswell-dashboard.git
+${TYPE}/ros/roswell-monkey.git

@@ -9,6 +9,8 @@ function createDir() {
 
 # REQUISITO OBRIGATORIOS
 # ======================================================================
+clear
+
 ./core/install_tcl.sh
 
 

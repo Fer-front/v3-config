@@ -1,3 +1,6 @@
+
+clear 
+
 cd ~
 
 echo Etapas para editar os arquivos config.json do pgv3-cli config:

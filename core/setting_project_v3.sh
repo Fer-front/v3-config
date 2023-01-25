@@ -1,3 +1,4 @@
+clear
 
 ./core/remove_node_modules_v3.sh;
 
@@ -9,7 +10,7 @@ npm config set @uol:registry http://verdaccio.cms.intranet/
 npm i;
 sudo npm i -g;
 
-msg_config_pgv3=" ====== Atencao passos para configuracao do pgv3-cli ====";
+msg_config_pgv3=" ====== Atenção passos para configuração do pgv3-cli ====";
 echo
 echo
 echo

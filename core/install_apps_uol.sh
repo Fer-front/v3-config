@@ -3,6 +3,9 @@ INSTALLED=()
 UNINSTALL=()
 INSTALING=()
 
+
+clear 
+
 # FUNCS COMMONS
 # ==================================================================
 

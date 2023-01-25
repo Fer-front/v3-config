@@ -1,6 +1,8 @@
 DIR_TCL=${HOME}/templatecache-local/template/;
 MSG_ALERT="É obrigatorio estar conectado na VPN !";
 
+clear
+
 if [ -d $DIR_TCL ]; then
     echo Vc já possui templatecache instalado!
     exit

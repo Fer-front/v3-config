@@ -180,7 +180,7 @@ init() {
 
         # Iniciando processo de clone dos repositorios necessarios para o v3
         echo
-        msg="Você deve estar conectado na VPN, caso contrario não sera feito clone do repositorios!"
+        msg="Você deve estar conectado na VPN, caso contrário não será feito clone dos repositórios!"
         echo -e "\033[1;40;42m${msg}\033[0m"
 
         cloneType
