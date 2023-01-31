@@ -21,7 +21,7 @@ linux() {
     echo [5] Remover node module V3
     echo [6] Certificados HTTPS
     echo [7] Ajustar Json de pgv3-cli config V3
-    echo [8] Configurar configurar projeto vuelanding
+    echo [8] Instalação projeto vueland
     echo [q] Sair
     echo
     read -p "Digite sua opção: " op;
@@ -73,7 +73,7 @@ mac() {
     echo [1] Clonar repositorios
     echo [2] Criar links simbolicos do v3
     echo [3] Certificados HTTPS
-    echo [4] Configurar configurar projeto vueland
+    echo [4] Instalação projeto vueland
     echo [q] Sair
     echo
     read -p "Digite sua opção: " op;
