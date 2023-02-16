@@ -1,30 +1,60 @@
 # V3 Config
 
-![](./assets/img/space.png)
+![](/home/febarros/snap/marktext/9/.config/marktext/images/2023-02-16-12-23-00-image.png)
 
-Ao clonar o repositório acesse o mesmo e procure por **init.sh** de permissão de execução para o script.
+Projeto como objetivo de facilitar e acelerar a configuração de alguns ambientes 
+
+
+
+## Clonando script
+
+![](/home/febarros/snap/marktext/9/.config/marktext/images/2023-02-16-12-23-00-image.png)
+
+Escolha uma pasta onde será colhado via terminal e rode o comando abaixo.
+
+```bash
+git clone https://stash.uol.intranet/scm/~febarros/v3-config.git
+```
+
+
+
+## Adicionar permissão de execução ao Script
+
+![](/home/febarros/snap/marktext/9/.config/marktext/images/2023-02-16-12-23-00-image.png)
+
+Após clonar o projeto acesse sua raiz e procure por **init.sh**
 
 
 
 ![](./assets/img/FILE_START.png)
 
-
-
-Clique com o botão direito sobre ele e va em propriedades:
-
-
+Clique com o botão direito sobre ele e vá em propriedades:
 
 - 1 acessar aba
 
 - 2 ativar check
 
-
-
 ![](./assets/img/ABILITE_SCRIPT.png)
 
-
-
 após isso e só executar o script via terminal:
+
+
+
+
+
+## Rodando script
+
+![](/home/febarros/snap/marktext/9/.config/marktext/images/2023-02-16-12-23-00-image.png)
+
+Abra o terminal na raiz do projeto onde podemos ver o arquivo init.sh
+
+rode o seguinte comando.
+
+
+
+```bash
+./init.sh
+```
 
 
 
@@ -34,48 +64,98 @@ Neste script possuimos alguma opções entre elas:
 
 ![](./assets/img/CLI.png)
 
-![](./assets/img/MARGIN.png)
 
-## Importante
 
-![](./assets/img/space.png)
+## Aplicativos
 
-- Para instalação do v3 via script certifique-se que não tenha
-  nenhum repositorio clonado dentro ~/uol_git
+![](/home/febarros/snap/marktext/9/.config/marktext/images/2023-02-16-12-23-00-image.png)
 
-- Que todas node_modules relacionadas ao projeto-grafico-v3 e pastas do pgv3-cli sejam excluidas
 
-- caso tenha registrado os caminhos do pgv3-cli config errado 
-  vc tera que editar os json na opção [9]
-
-- Você ira rodar o script com bash
-
-![](./assets/img/MARGIN.png)
-
-## Na instalação dos app tesmos o seguintes app
-
-![](./assets/img/space.png)
 
 ![](./assets/img/APPS.png)
 
+
+
 ![](./assets/img/OUTER_APPS.png)
 
+
+
+Para a instalação dos app é recomendado estar disconectado da vpn
+
+lista com app disponiveis para instalação:
+
+
+
+## Essenciais
+
+- git
+
+- curl
+
+- wget
+
+- snap
+
+- node
+
+- npm
+
+- n
+
+- java
+
+- svn
+
+- zsh
+
+## Lazer
+
+- spotify
+
+## Navegadores
+
+- chrome
+
+- chromium-browser
+
+## Utilitários
+
+- terminator
+
+- flameshot screenshot de tela
+
+## Escritorio
+
+- wps office
+
+- teams
+
+- lunatask
+
+## Editores de código
+
+- marktext
+
+- webstorm
+
+- vs-code
+
+- sublime-text
+
 ![](./assets/img/MARGIN.png)
 
-## Clonar repositório v3
+## Etapas para instalação do v3
 
-![](./assets/img/space.png)
+![](/home/febarros/snap/marktext/9/.config/marktext/images/2023-02-16-12-23-00-image.png)
 
-Será clonado somente o necessario para rodar o projeto-grafico.
+Siga a ordem descrita abaixo.
 
-![](./assets/img/MARGIN.png)
 
-## Checar o repositório v3
 
-![](./assets/img/space.png)
+- **opção 2** clonar repositorios 
 
-Verifica se os repositórios necessario para o funcionamento do v3 estao ok
+- **opção 3** criar links simbolicos 
 
-OBS: Essa verifição só verifica se o diretorio esta presente em uol_git/ caso já esteja não sera feito o clone.
-
-![](./assets/img/MARGIN.png)
+- **opção 4** configurar v3 
+  
+  

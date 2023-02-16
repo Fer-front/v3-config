@@ -25,6 +25,8 @@ install_n() {
     fi
 }
 
+# TODO: FALTA A VERIFICACAO DA VERSAO DEFAULT DO NODE E INSTALAÇÃO
+
 set_version_node() {
     if test ! -n $(n which ${VERSION_NODE_PROJECT}); then
         echo
